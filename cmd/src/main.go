@@ -32,5 +32,18 @@ func main() {
 
 	//same print out for all
 
-	fmt.Printf("\n %+v \n %+v \n %+v", sebastian, erin, toby)
+	fmt.Printf("\n %+v \n %+v \n", sebastian, erin)
+
+	toby.printPerson()
+
+}
+
+func (p person) printPerson() {
+
+	fmt.Println()
+	fmt.Println("fName : ", p.fName)
+	fmt.Println("lName : ", p.lName)
+	fmt.Println("email : ", p.info.email)
+	fmt.Println("postCode : ", p.info.postCode+"\n")
+
 }
