@@ -2,10 +2,13 @@ package main
 
 import "fmt"
 
+//struct to hold contact info
 type contactInfo struct {
 	email    string
 	postCode string
 }
+
+//struct to hold person info and sub struct of contactInfo
 type person struct {
 	fName string
 	lName string
@@ -29,5 +32,5 @@ func main() {
 
 	//same print out for all
 
-	fmt.Println("\n", sebastian, "\n", erin, "\n", toby)
+	fmt.Printf("\n %+v \n %+v \n %+v", sebastian, erin, toby)
 }
