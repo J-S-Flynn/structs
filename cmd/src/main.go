@@ -31,19 +31,30 @@ func main() {
 	toby.fName, toby.lName, toby.info.email, toby.info.postCode = "Toby", "Flynn", "toby@someplace.com", "ls9 2ho"
 
 	//same print out for all
+	//printf allows us to format the string, %+v will not only the value of the variables, but also the name of them
+	fmt.Printf("\n %+v \n %+v \n %+v \n", sebastian, erin, toby)
 
-	fmt.Printf("\n %+v \n %+v \n", sebastian, erin)
-
-	toby.printPerson()
-
+	//imporant opiratos & and *. the oparator & tels the compiler to give access to the
+	//address of the variable in memory so in this case seb is the address of the variable sebastian
 	seb := &sebastian
 	seb.updatName("seb")
 
 	sebastian.printPerson()
+
+	//that a little cumbersom though to go has the option to call a reciver with a pionte to type by variable
+	//of that type and assumes pionter. this will work with a var of type person, but would with a non maching type
+	toby.updatName("Tobob")
+
+	toby.printPerson()
+
 }
 
+//it should be noted the is a difrence between *person and (*p).fName. *person denotes we are dealing with a pionter to a type
+//in this case its a pionter of type person so the reciver is expecting a pionter to type person
 func (p *person) updatName(newName string) {
 
+	//the *p tells the compiler we want to look at the value of the variable so in this case we want to change the
+	//value of the variable from the old name to the new one.
 	(*p).fName = newName
 }
 
