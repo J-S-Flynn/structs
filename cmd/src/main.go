@@ -47,6 +47,8 @@ func main() {
 
 	toby.printPerson()
 
+	//and for the sake of completion
+	erin.printPerson()
 }
 
 //it should be noted the is a difrence between *person and (*p).fName. *person denotes we are dealing with a pionter to a type
@@ -58,6 +60,7 @@ func (p *person) updatName(newName string) {
 	(*p).fName = newName
 }
 
+//simple reciver to allow for printing of structs of type person
 func (p person) printPerson() {
 
 	fmt.Println()
