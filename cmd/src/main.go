@@ -36,6 +36,15 @@ func main() {
 
 	toby.printPerson()
 
+	seb := &sebastian
+	seb.updatName("seb")
+
+	sebastian.printPerson()
+}
+
+func (p *person) updatName(newName string) {
+
+	(*p).fName = newName
 }
 
 func (p person) printPerson() {
